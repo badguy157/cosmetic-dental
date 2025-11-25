@@ -248,6 +248,7 @@ p {
 }
 
 .site-nav .nav__links {
+  display: flex;
   flex-direction: column;
   gap: 0;
 }
@@ -928,6 +929,7 @@ p {
   }
 
   .site-nav .nav__links {
+    display: flex;
     flex-direction: row;
     gap: 2rem;
   }
