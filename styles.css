@@ -2,6 +2,45 @@
    Cosmetic & Implant Dentistry Clinic - Styles
    ========================================================================== */
 
+/* Demo Banner & Note */
+.demo-banner {
+  background-color: #374151;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+
+.demo-banner a {
+  color: #60a5fa;
+}
+
+.demo-banner a:hover {
+  color: #93c5fd;
+}
+
+.demo-note {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.demo-note p {
+  margin-bottom: 0.5rem;
+}
+
+.demo-note a {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.demo-note a:hover {
+  color: var(--color-white);
+}
+
 /* CSS Variables - Color Palette */
 :root {
   --color-primary: #2563eb;
