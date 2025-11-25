@@ -1025,8 +1025,9 @@ p {
   }
 
   /* Add padding to body so content isn't hidden behind sticky CTA.
-     Height accounts for: button (~48px) + link (~20px) + padding (2 * 16px) + gap (8px) ≈ 108px */
-  body {
+     Height accounts for: button (~48px) + link (~20px) + padding (2 * 16px) + gap (8px) ≈ 108px
+     Only applied to pages that have the sticky CTA (those with .has-sticky-cta class on body) */
+  body.has-sticky-cta {
     padding-bottom: 110px;
   }
 }
