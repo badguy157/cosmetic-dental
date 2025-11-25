@@ -13,18 +13,25 @@
   </div>
 
   <!-- Header -->
-  <header class="header">
-    <nav class="nav container">
+  <header class="site-header">
+    <div class="header-inner container">
       <a href="index.html" class="nav__logo">Smile Bright Dental</a>
-      <ul class="nav__links">
-        <li><a href="index.html" class="nav__link">Home</a></li>
-        <li><a href="treatments.html" class="nav__link">Treatments</a></li>
-        <li><a href="results.html" class="nav__link">Results</a></li>
-        <li><a href="team.html" class="nav__link active">Team</a></li>
-        <li><a href="pricing.html" class="nav__link">Pricing</a></li>
-        <li><a href="contact.html" class="nav__link">Contact</a></li>
-      </ul>
-    </nav>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav">
+        <ul class="nav__links">
+          <li><a href="index.html" class="nav__link">Home</a></li>
+          <li><a href="treatments.html" class="nav__link">Treatments</a></li>
+          <li><a href="results.html" class="nav__link">Results</a></li>
+          <li><a href="team.html" class="nav__link active">Team</a></li>
+          <li><a href="pricing.html" class="nav__link">Pricing</a></li>
+          <li><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <!-- Hero Section -->
@@ -150,5 +157,26 @@
       </div>
     </div>
   </footer>
+
+  <!-- Mobile Navigation Script -->
+  <script>
+    (function() {
+      var siteHeader = document.querySelector('.site-header');
+      var navToggle = document.querySelector('.nav-toggle');
+      var navLinks = document.querySelectorAll('.site-nav .nav__link');
+
+      if (navToggle && siteHeader) {
+        navToggle.addEventListener('click', function() {
+          siteHeader.classList.toggle('nav-open');
+        });
+
+        navLinks.forEach(function(link) {
+          link.addEventListener('click', function() {
+            siteHeader.classList.remove('nav-open');
+          });
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
