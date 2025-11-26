@@ -1193,7 +1193,7 @@ p {
   }
 
   .hero__headline {
-    font-size: 2.75rem;
+    font-size: 3rem;
   }
 
   .hero__card {
@@ -1231,7 +1231,7 @@ p {
 /* Large Desktop */
 @media (min-width: 1024px) {
   .hero__headline {
-    font-size: 3.25rem;
+    font-size: 3.5rem;
   }
 
   .hero__grid {
