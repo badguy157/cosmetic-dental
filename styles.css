@@ -852,6 +852,220 @@ p {
 .mb-4 { margin-bottom: 2rem; }
 
 /* ==========================================================================
+   Hero Section - Two Column Layout
+   ========================================================================== */
+
+.hero__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero__content {
+  text-align: center;
+}
+
+.hero__trust {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.hero__trust-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+}
+
+.hero__trust-icon {
+  font-size: 1rem;
+}
+
+.hero__card {
+  width: 100%;
+  max-width: 400px;
+}
+
+.hero__card-image {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.hero__card-placeholder {
+  aspect-ratio: 4/3;
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+}
+
+.hero__card-placeholder span {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero__card-placeholder p {
+  font-weight: 600;
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Fit List - Enhanced Spacing
+   ========================================================================== */
+
+.fit-list li {
+  padding: 1rem 0;
+  padding-left: 2rem;
+}
+
+/* ==========================================================================
+   Section Intro Text
+   ========================================================================== */
+
+.section__intro {
+  text-align: center;
+  color: var(--color-text-light);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   Problems Cards
+   ========================================================================== */
+
+.problems-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.problems-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--color-white);
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.problems-card__icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.problems-card__text {
+  margin: 0;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   Meet Your Dentist Section
+   ========================================================================== */
+
+.dentist-section {
+  background-color: var(--color-bg-alt);
+}
+
+.dentist-strip {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.dentist-strip__photo {
+  flex-shrink: 0;
+}
+
+.dentist-strip__placeholder {
+  width: 180px;
+  height: 180px;
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.dentist-strip__content {
+  max-width: 500px;
+}
+
+.dentist-strip__name {
+  font-size: 1.75rem;
+  margin-bottom: 0.25rem;
+  color: var(--color-text);
+}
+
+.dentist-strip__title {
+  color: var(--color-primary);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.dentist-strip__bio {
+  color: var(--color-text-light);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.dentist-strip__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 1rem;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.dentist-strip__stat-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.dentist-strip__stat-label {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+}
+
+/* ==========================================================================
+   Results Disclaimer
+   ========================================================================== */
+
+.results-disclaimer {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+  font-style: italic;
+  margin-bottom: 2rem;
+  margin-top: -1rem;
+}
+
+/* ==========================================================================
    Responsive Styles
    ========================================================================== */
 
@@ -864,6 +1078,16 @@ p {
   .hero__ctas {
     flex-direction: row;
     justify-content: center;
+  }
+
+  .hero__trust {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .problems-cards {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .grid--2 {
@@ -949,8 +1173,42 @@ p {
     padding: 5rem 0;
   }
 
+  .hero__grid {
+    flex-direction: row;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .hero__content {
+    flex: 1;
+    text-align: left;
+  }
+
+  .hero__ctas {
+    justify-content: flex-start;
+  }
+
+  .hero__trust {
+    justify-content: flex-start;
+  }
+
   .hero__headline {
-    font-size: 3rem;
+    font-size: 2.75rem;
+  }
+
+  .hero__card {
+    flex: 0 0 45%;
+    max-width: 450px;
+  }
+
+  .dentist-strip {
+    flex-direction: row;
+    text-align: left;
+    gap: 3rem;
+  }
+
+  .dentist-strip__stat {
+    align-items: flex-start;
   }
 
   .section {
@@ -973,11 +1231,19 @@ p {
 /* Large Desktop */
 @media (min-width: 1024px) {
   .hero__headline {
-    font-size: 3.5rem;
+    font-size: 3.25rem;
+  }
+
+  .hero__grid {
+    gap: 5rem;
   }
 
   .grid--4 {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .problems-cards {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
