@@ -1045,7 +1045,7 @@ p {
 /* Hero card content with image */
 .hero__card-content {
   aspect-ratio: 16/11;
-  background: #f8fafb;
+  background: var(--color-bg-alt);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1065,7 +1065,7 @@ p {
   font-weight: 500;
   font-size: 0.875rem;
   margin: 0;
-  color: #1e293b;
+  color: var(--color-text);
 }
 
 /* Card footer with trust indicators */
