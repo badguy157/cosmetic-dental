@@ -1042,6 +1042,32 @@ p {
   letter-spacing: 0.01em;
 }
 
+/* Hero card content with image */
+.hero__card-content {
+  aspect-ratio: 16/11;
+  background: #f8fafb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1rem;
+  border-radius: 1rem;
+}
+
+.hero__card-img {
+  height: 8rem;
+  width: auto;
+  margin-bottom: 1rem;
+  object-fit: contain;
+}
+
+.hero__card-label {
+  font-weight: 500;
+  font-size: 0.875rem;
+  margin: 0;
+  color: #1e293b;
+}
+
 /* Card footer with trust indicators */
 .hero__card::after {
   content: "⭐ 200+ 5-star reviews · Anxiety-friendly care";
