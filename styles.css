@@ -1212,35 +1212,33 @@ p {
 
 .dentist-strip__photo {
   flex-shrink: 0;
+  margin-bottom: 1.5rem;
 }
 
-.dentist-strip__placeholder {
-  width: 200px;
-  height: 200px;
-  background: linear-gradient(135deg, rgba(90, 127, 124, 0.2) 0%, rgba(30, 58, 95, 0.15) 100%);
-  border-radius: var(--radius-lg);
+.dentist-strip__card-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 5.5rem;
-  box-shadow: var(--shadow-md);
-  border: 3px solid var(--color-white);
-  position: relative;
-  overflow: hidden;
 }
 
-.dentist-strip__placeholder::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.3) 100%);
+.dentist-strip__card {
+  border-radius: var(--radius-lg);
+  background: #f8fafb;
+  padding: 0.75rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border-light);
+}
+
+.dentist-strip__image-wrapper {
+  overflow: hidden;
+  border-radius: var(--radius-lg);
 }
 
 .dentist-strip__headshot {
-  width: 200px;
-  height: 200px;
-  border-radius: var(--radius-lg);
+  width: 240px;
+  height: 320px;
   object-fit: cover;
+  display: block;
 }
 
 .dentist-strip__content {
@@ -1462,6 +1460,10 @@ p {
     flex-direction: row;
     text-align: left;
     gap: 3rem;
+  }
+
+  .dentist-strip__photo {
+    margin-bottom: 0;
   }
 
   .dentist-strip__stat {
