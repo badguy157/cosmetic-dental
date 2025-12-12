@@ -1236,6 +1236,13 @@ p {
   background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.3) 100%);
 }
 
+.dentist-strip__headshot {
+  width: 200px;
+  height: 200px;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+}
+
 .dentist-strip__content {
   max-width: 600px;
 }
