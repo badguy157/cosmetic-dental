@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+  <defs>
+    <linearGradient id="toothGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f0f0f0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Tooth shape -->
+  <path d="M 80 20 
+           C 60 20, 50 30, 50 50
+           C 50 60, 48 80, 50 100
+           C 52 120, 55 140, 60 145
+           C 65 150, 75 150, 80 150
+           C 85 150, 95 150, 100 145
+           C 105 140, 108 120, 110 100
+           C 112 80, 110 60, 110 50
+           C 110 30, 100 20, 80 20 Z" 
+        fill="url(#toothGradient)" 
+        stroke="#5a7f7c" 
+        stroke-width="2"
+        opacity="0.9"/>
+  <!-- Shine effect -->
+  <ellipse cx="70" cy="45" rx="8" ry="12" fill="white" opacity="0.6"/>
+</svg>
