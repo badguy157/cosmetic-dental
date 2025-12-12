@@ -1055,16 +1055,18 @@ p {
 }
 
 .hero__card-img {
-  height: 8rem;
+  height: 12rem;
   width: auto;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   object-fit: contain;
+  border-radius: 1rem;
 }
 
 .hero__card-label {
   font-weight: 500;
   font-size: 0.875rem;
   margin: 0;
+  margin-top: 0.25rem;
   color: var(--color-text);
 }
 
@@ -1079,7 +1081,7 @@ p {
   color: var(--color-text-light);
   text-align: center;
   padding-top: 1rem;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid #f1f1f0;
 }
 
 /* ==========================================================================
