@@ -63,6 +63,9 @@
   --color-border: #e7e5e4;
   --color-border-light: #f1f1f0;
   --color-white: #ffffff;
+  /* Hero gradient colors */
+  --color-hero-gradient-start: #faf6f1;
+  --color-hero-gradient-end: #ffffff;
   /* Subtle, refined shadows */
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -337,8 +340,16 @@ p {
 }
 
 /* Hero Section - Premium two-column layout */
+/* Hero Wrapper - Subtle background gradient */
+.hero-wrapper {
+  background: linear-gradient(
+    180deg,
+    var(--color-hero-gradient-start) 0%,
+    var(--color-hero-gradient-end) 45%
+  );
+}
+
 .hero {
-  background: linear-gradient(135deg, var(--color-bg-alt) 0%, var(--color-bg) 100%);
   padding: 4rem 0;
   text-align: center;
 }
@@ -1022,6 +1033,20 @@ p {
   border: 1px solid rgba(0, 0, 0, 0.06);
   padding: 1.5rem;
   position: relative;
+}
+
+/* Hero card with soft radial glow */
+.hero-inner {
+  position: relative;
+}
+
+.hero-inner::before {
+  content: "";
+  position: absolute;
+  inset: -80px;
+  background: radial-gradient(circle at top right, rgba(133, 181, 222, 0.20), transparent 55%);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .hero__card::before {
