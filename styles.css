@@ -337,8 +337,16 @@ p {
 }
 
 /* Hero Section - Premium two-column layout */
+/* Hero Wrapper - Subtle background gradient */
+.hero-wrapper {
+  background: linear-gradient(
+    180deg,
+    #faf6f1 0%,
+    #ffffff 45%
+  );
+}
+
 .hero {
-  background: linear-gradient(135deg, var(--color-bg-alt) 0%, var(--color-bg) 100%);
   padding: 4rem 0;
   text-align: center;
 }
@@ -1022,6 +1030,20 @@ p {
   border: 1px solid rgba(0, 0, 0, 0.06);
   padding: 1.5rem;
   position: relative;
+}
+
+/* Hero card with soft radial glow */
+.hero-inner {
+  position: relative;
+}
+
+.hero-inner::before {
+  content: "";
+  position: absolute;
+  inset: -80px;
+  background: radial-gradient(circle at top right, rgba(133, 181, 222, 0.20), transparent 55%);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .hero__card::before {
