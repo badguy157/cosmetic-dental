@@ -341,6 +341,14 @@ p {
 
 /* Hero Section - Premium two-column layout */
 /* Hero Wrapper - Subtle background gradient */
+.dental-hero-gradient {
+  background: linear-gradient(
+    180deg,
+    var(--color-hero-gradient-start) 0%,
+    var(--color-hero-gradient-end) 45%
+  );
+}
+
 .hero-wrapper {
   background: linear-gradient(
     180deg,
