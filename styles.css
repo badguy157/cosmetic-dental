@@ -503,23 +503,75 @@ p {
 .ba-card {
   background-color: var(--color-bg-card);
   border-radius: var(--radius-lg);
-  overflow: hidden;
+  padding: 1.5rem;
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--color-border);
   transition: all var(--transition);
+  overflow: hidden;
 }
 
 .ba-card:hover {
   box-shadow: var(--shadow-md);
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
+/* Grid for before/after images - stacked on mobile, side by side on desktop */
+.ba-card__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Each before/after item */
+.ba-card__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Badge labels (Before/After) */
+.ba-card__badge-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ba-card__badge-label--before {
+  color: var(--color-text-light);
+}
+
+.ba-card__badge-label--after {
+  color: var(--color-secondary);
+}
+
+/* Image wrapper with aspect ratio */
 .ba-card__image-wrapper {
   position: relative;
   width: 100%;
-  height: 12rem; /* 192px - matches h-48 from problem statement */
   overflow: hidden;
-  border-bottom: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-alt);
+}
+
+/* Fallback for older browsers that don't support aspect-ratio */
+.ba-card__image-wrapper::before {
+  content: '';
+  display: block;
+  padding-bottom: 75%; /* 4:3 aspect ratio = 3/4 = 0.75 */
+}
+
+/* Modern browsers with aspect-ratio support */
+@supports (aspect-ratio: 4 / 3) {
+  .ba-card__image-wrapper {
+    aspect-ratio: 4 / 3;
+  }
+  
+  .ba-card__image-wrapper::before {
+    content: none;
+  }
 }
 
 .ba-card__photo {
@@ -527,47 +579,17 @@ p {
   height: 100%;
   object-fit: cover;
   display: block;
-}
-
-.ba-card__badge {
   position: absolute;
-  top: 0.75rem; /* 12px - matches top-3 from problem statement */
+  top: 0;
+  left: 0;
 }
 
-.ba-card__badge--before {
-  left: 0.75rem; /* 12px - matches left-3 from problem statement */
-}
-
-.ba-card__badge--after {
-  right: 0.75rem; /* 12px - matches right-3 from problem statement */
-}
-
-.ba-card__badge span {
-  display: inline-block;
-  background-color: rgba(255, 255, 255, 0.8); /* bg-white/80 */
-  padding: 0.25rem 0.75rem; /* py-1 px-3 */
-  font-size: 0.75rem; /* text-xs */
-  font-weight: 500; /* font-medium */
-  letter-spacing: 0.025em; /* tracking-wide */
-  color: #475569; /* text-slate-600 */
-  border-radius: 9999px; /* rounded-full */
-}
-
-.ba-card__content {
-  padding: 1.25rem;
+/* Title below the before/after images */
+.ba-card__title {
   text-align: center;
-}
-
-.ba-card__label {
   font-weight: 600;
-  color: var(--color-text);
-  margin-bottom: 0.25rem;
-  font-size: 1.0625rem;
-}
-
-.ba-card__note {
   font-size: 0.875rem;
-  color: var(--color-text-light);
+  color: var(--color-text);
   margin: 0;
 }
 
@@ -1364,6 +1386,11 @@ p {
   }
 
   .footer__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Before/After cards - side by side on tablet and above */
+  .ba-card__grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
