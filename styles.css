@@ -350,11 +350,7 @@ p {
 }
 
 .hero-wrapper {
-  background: linear-gradient(
-    180deg,
-    var(--color-hero-gradient-start) 0%,
-    var(--color-hero-gradient-end) 45%
-  );
+  /* Background gradient now provided by .dental-hero-gradient class */
 }
 
 .hero {
