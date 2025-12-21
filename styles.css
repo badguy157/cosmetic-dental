@@ -1690,12 +1690,20 @@ p {
   padding: 1rem;
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
   transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.kt-modal[aria-hidden="true"] {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .kt-modal[aria-hidden="false"] {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
 }
 
 .kt-modal__backdrop {
@@ -1704,20 +1712,21 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background: rgba(var(--color-primary-darker-rgb), 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   cursor: pointer;
 }
 
 .kt-modal__dialog {
   position: relative;
   background-color: var(--color-white);
-  border-radius: 0.5rem;
+  border-radius: var(--radius-md);
   max-width: 500px;
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
-              0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow-lg);
   transform: scale(0.95);
   transition: transform 0.3s ease;
 }
@@ -1742,12 +1751,13 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 0.25rem;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition), color var(--transition);
+  z-index: 1;
 }
 
 .kt-modal__close:hover {
-  background-color: var(--color-gray-100);
+  background-color: var(--color-bg-alt);
   color: var(--color-text);
 }
 
@@ -1765,19 +1775,46 @@ p {
   margin-bottom: 0.5rem;
   font-size: 1.5rem;
   color: var(--color-text);
+  font-weight: 600;
 }
 
 .kt-modal__content > p {
   margin-bottom: 1.5rem;
-  color: var(--color-text-muted);
+  color: var(--color-text-light);
+  line-height: 1.6;
 }
 
+/* Success confirmation card styling */
 .kt-modal__content[data-state="success"] {
   text-align: center;
+  padding: 2.5rem 2rem;
+  background: linear-gradient(to bottom, var(--color-bg), var(--color-white));
+  border-radius: var(--radius-md);
 }
 
 .kt-modal__content[data-state="success"] h2 {
   color: var(--color-primary);
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.kt-modal__content[data-state="success"] h2::before {
+  content: "✓";
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto 1rem;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-radius: var(--radius-full);
+  font-size: 1.5rem;
+  line-height: 3rem;
+  font-weight: bold;
+}
+
+.kt-modal__content[data-state="success"] p {
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
 }
 
 /* Modal form styles */
@@ -1798,13 +1835,13 @@ p {
 #bookingForm textarea {
   width: 100%;
   padding: 0.625rem 0.875rem;
-  border: 1px solid var(--color-gray-300);
-  border-radius: 0.375rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
   font-size: 1rem;
   font-family: inherit;
   color: var(--color-text);
   background-color: var(--color-white);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color var(--transition), box-shadow var(--transition);
 }
 
 #bookingForm input:focus,
@@ -1823,4 +1860,32 @@ p {
 #bookingForm .btn {
   width: 100%;
   margin-top: 0.5rem;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 640px) {
+  .kt-modal {
+    padding: 0.5rem;
+  }
+  
+  .kt-modal__dialog {
+    max-height: 95vh;
+    border-radius: var(--radius-sm);
+  }
+  
+  .kt-modal__content {
+    padding: 1.5rem;
+  }
+  
+  .kt-modal__content[data-state="success"] {
+    padding: 2rem 1.5rem;
+  }
+  
+  .kt-modal__content h2 {
+    font-size: 1.25rem;
+  }
+  
+  .kt-modal__content[data-state="success"] h2 {
+    font-size: 1.5rem;
+  }
 }
