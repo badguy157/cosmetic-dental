@@ -190,20 +190,18 @@
 
   function showFieldError(field, message) {
     var errorId = field.id + '-error';
-    var existingError = document.getElementById(errorId);
+    var errorElement = document.getElementById(errorId);
     
     // Create error element if it doesn't exist
-    if (!existingError) {
-      var errorElement = document.createElement('div');
+    if (!errorElement) {
+      errorElement = document.createElement('div');
       errorElement.id = errorId;
       errorElement.className = 'field-error';
       errorElement.setAttribute('role', 'alert');
       field.parentNode.appendChild(errorElement);
-    } else {
-      existingError = document.getElementById(errorId);
     }
     
-    existingError.textContent = message;
+    errorElement.textContent = message;
     field.setAttribute('aria-invalid', 'true');
     field.setAttribute('aria-describedby', errorId);
   }
