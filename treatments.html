@@ -203,6 +203,7 @@
     <div class="kt-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="bookingTitle">
       <button class="kt-modal__close" type="button" aria-label="Close" data-close-modal>×</button>
 
+      <!-- Step 1: Details Form -->
       <div class="kt-modal__content" data-state="form">
         <h2 id="bookingTitle">Request a Consultation</h2>
         <p>Tell us what you're interested in. We'll confirm by text or email.</p>
@@ -210,22 +211,22 @@
         <form id="bookingForm">
           <div class="form-group">
             <label for="booking-name">Full name *</label>
-            <input type="text" id="booking-name" name="name" required placeholder="John Smith">
+            <input type="text" id="booking-name" name="name" placeholder="John Smith">
           </div>
 
           <div class="form-group">
-            <label for="booking-phone">Phone number *</label>
-            <input type="tel" id="booking-phone" name="phone" required placeholder="(555) 000-0000">
+            <label for="booking-phone">Phone</label>
+            <input type="tel" id="booking-phone" name="phone" placeholder="(555) 000-0000">
           </div>
 
           <div class="form-group">
-            <label for="booking-email">Email (optional)</label>
+            <label for="booking-email">Email</label>
             <input type="email" id="booking-email" name="email" placeholder="john@example.com">
           </div>
 
           <div class="form-group">
             <label for="booking-treatment">Treatment interest *</label>
-            <select id="booking-treatment" name="treatment" required>
+            <select id="booking-treatment" name="treatment">
               <option value="">Please choose...</option>
               <option value="whitening">Teeth Whitening</option>
               <option value="veneers">Veneers</option>
@@ -240,7 +241,7 @@
 
           <div class="form-group">
             <label for="booking-time">Preferred time *</label>
-            <select id="booking-time" name="preferred-time" required>
+            <select id="booking-time" name="preferred-time">
               <option value="">Please choose...</option>
               <option value="morning">Morning (8am - 12pm)</option>
               <option value="afternoon">Afternoon (12pm - 5pm)</option>
@@ -254,10 +255,49 @@
             <textarea id="booking-notes" name="notes" placeholder="Tell us anything else we should know..."></textarea>
           </div>
 
-          <button type="submit" class="btn btn--primary btn--large">Request consultation</button>
+          <button type="submit" class="btn btn--primary btn--large">Next</button>
         </form>
       </div>
 
+      <!-- Step 2: Confirmation -->
+      <div class="kt-modal__content" data-state="confirm" hidden>
+        <h2>Confirm Your Request</h2>
+        <p>Please review your information before submitting.</p>
+
+        <div class="confirmation-summary">
+          <div class="confirmation-row">
+            <span class="confirmation-label">Name:</span>
+            <span class="confirmation-value" id="confirm-name"></span>
+          </div>
+          <div class="confirmation-row">
+            <span class="confirmation-label">Phone:</span>
+            <span class="confirmation-value" id="confirm-phone"></span>
+          </div>
+          <div class="confirmation-row">
+            <span class="confirmation-label">Email:</span>
+            <span class="confirmation-value" id="confirm-email"></span>
+          </div>
+          <div class="confirmation-row">
+            <span class="confirmation-label">Treatment:</span>
+            <span class="confirmation-value" id="confirm-treatment"></span>
+          </div>
+          <div class="confirmation-row">
+            <span class="confirmation-label">Preferred time:</span>
+            <span class="confirmation-value" id="confirm-time"></span>
+          </div>
+          <div class="confirmation-row">
+            <span class="confirmation-label">Notes:</span>
+            <span class="confirmation-value" id="confirm-notes"></span>
+          </div>
+        </div>
+
+        <div class="confirmation-actions">
+          <button type="button" class="btn btn--secondary btn--large" data-edit-booking>Edit</button>
+          <button type="button" class="btn btn--primary btn--large" data-confirm-booking>Confirm request</button>
+        </div>
+      </div>
+
+      <!-- Step 3: Success -->
       <div class="kt-modal__content" data-state="success" hidden>
         <h2>Request received</h2>
         <p>Next steps: we'll reach out within 1 business day to confirm your consultation time.</p>
