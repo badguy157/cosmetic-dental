@@ -787,6 +787,18 @@ p {
   margin-bottom: 0;
 }
 
+.testimonial .badge-sample {
+  margin-bottom: 0.75rem;
+  display: inline-block;
+}
+
+/* Hero disclaimer text */
+.hero__disclaimer {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  color: var(--color-text-muted);
+}
+
 /* Team Cards */
 .team-card {
   background-color: var(--color-white);
