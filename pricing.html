@@ -44,23 +44,188 @@
     </section>
   </div>
 
-  <!-- Pricing Table -->
-  <section class="section">
+  <!-- Get Exact Quote Module -->
+  <section class="section quote-module-section">
     <div class="container">
-      <h2 class="section__title">Treatment prices</h2>
+      <div class="quote-module">
+        <h2 class="quote-module__title">Get an exact quote</h2>
+        <p class="quote-module__text">Tell us what you want to improve. We'll confirm a consult and give you a clear price range.</p>
+        
+        <div class="quote-module__chips">
+          <button class="chip chip--clickable" data-open-booking="true" data-treatment="Veneers">Veneers</button>
+          <button class="chip chip--clickable" data-open-booking="true" data-treatment="Teeth Whitening">Whitening</button>
+          <button class="chip chip--clickable" data-open-booking="true" data-treatment="Dental Implants">Implants</button>
+        </div>
+        
+        <button class="btn btn--primary btn--large" data-open-booking="true">Get exact quote</button>
+        <p class="quote-module__demo">Demo: sample quote flow</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- At a Glance -->
+  <section class="section section--alt">
+    <div class="container">
+      <h2 class="section__title">At a glance</h2>
+      <div class="glance-cards">
+        <a href="#veneers" class="glance-card">
+          <h3 class="glance-card__title">Veneers</h3>
+          <p class="glance-card__price">$800–$1,500 per tooth</p>
+          <p class="glance-card__text">Transform your smile with custom porcelain or composite veneers</p>
+        </a>
+        <a href="#whitening" class="glance-card">
+          <h3 class="glance-card__title">Whitening</h3>
+          <p class="glance-card__price">$300–$600</p>
+          <p class="glance-card__text">Brighten your teeth with professional whitening treatments</p>
+        </a>
+        <a href="#implants" class="glance-card">
+          <h3 class="glance-card__title">Implants</h3>
+          <p class="glance-card__price">$3,000–$5,000 per tooth</p>
+          <p class="glance-card__text">Replace missing teeth with permanent implant solutions</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Veneers Pricing Detail -->
+  <section class="section" id="veneers">
+    <div class="container">
+      <div class="pricing-detail">
+        <h2 class="pricing-detail__title">Veneers</h2>
+        <p class="pricing-detail__price">$800 to $1,500 per tooth</p>
+        
+        <div class="pricing-factors">
+          <h3 class="pricing-factors__title">What affects the price</h3>
+          <ul class="pricing-factors__list">
+            <li>Number of teeth</li>
+            <li>Material choice (porcelain vs composite)</li>
+            <li>Prep work needed</li>
+            <li>Bite/alignment complexity</li>
+            <li>Any old dental work to replace</li>
+          </ul>
+        </div>
+
+        <div class="pricing-scenarios">
+          <h3 class="pricing-scenarios__title">
+            Sample scenarios
+            <span class="badge-sample">Sample</span>
+          </h3>
+          <div class="scenario-cards">
+            <div class="scenario-card">
+              <h4 class="scenario-card__title">2 teeth (front touch-up)</h4>
+              <p class="scenario-card__range">$X–$Y</p>
+              <p class="scenario-card__description">Shape + color match for 2 front teeth.</p>
+            </div>
+            <div class="scenario-card">
+              <h4 class="scenario-card__title">6 teeth (smile zone)</h4>
+              <p class="scenario-card__range">$X–$Y</p>
+              <p class="scenario-card__description">Most common for a natural, even smile.</p>
+            </div>
+            <div class="scenario-card">
+              <h4 class="scenario-card__title">10 teeth (full upper smile)</h4>
+              <p class="scenario-card__range">$X–$Y</p>
+              <p class="scenario-card__description">For a bigger change across the upper front.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Whitening Pricing Detail -->
+  <section class="section section--alt" id="whitening">
+    <div class="container">
+      <div class="pricing-detail">
+        <h2 class="pricing-detail__title">Teeth Whitening</h2>
+        <p class="pricing-detail__price">$300 to $600</p>
+        
+        <div class="pricing-factors">
+          <h3 class="pricing-factors__title">What affects the price</h3>
+          <ul class="pricing-factors__list">
+            <li>In-office vs take-home trays</li>
+            <li>Staining level</li>
+            <li>Sensitivity treatment</li>
+            <li>Number of sessions</li>
+          </ul>
+        </div>
+
+        <div class="pricing-scenarios">
+          <h3 class="pricing-scenarios__title">
+            Sample scenarios
+            <span class="badge-sample">Sample</span>
+          </h3>
+          <div class="scenario-cards">
+            <div class="scenario-card">
+              <h4 class="scenario-card__title">1 in-office session</h4>
+              <p class="scenario-card__range">$X–$Y</p>
+              <p class="scenario-card__description">Fast brightness boost.</p>
+            </div>
+            <div class="scenario-card">
+              <h4 class="scenario-card__title">Trays + gel kit</h4>
+              <p class="scenario-card__range">$X–$Y</p>
+              <p class="scenario-card__description">Gradual whitening at home.</p>
+            </div>
+            <div class="scenario-card">
+              <h4 class="scenario-card__title">Combo (office + trays)</h4>
+              <p class="scenario-card__range">$X–$Y</p>
+              <p class="scenario-card__description">Best for deeper stains.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Implants Pricing Detail -->
+  <section class="section" id="implants">
+    <div class="container">
+      <div class="pricing-detail">
+        <h2 class="pricing-detail__title">Dental Implants</h2>
+        <p class="pricing-detail__price">$3,000 to $5,000 per tooth</p>
+        
+        <div class="pricing-factors">
+          <h3 class="pricing-factors__title">What affects the price</h3>
+          <ul class="pricing-factors__list">
+            <li>Number of implants</li>
+            <li>Bone grafting needed</li>
+            <li>Type of restoration (crown/bridge)</li>
+            <li>Imaging/surgical planning complexity</li>
+            <li>Healing timeline and visits</li>
+          </ul>
+        </div>
+
+        <div class="pricing-scenarios">
+          <h3 class="pricing-scenarios__title">
+            Sample scenarios
+            <span class="badge-sample">Sample</span>
+          </h3>
+          <div class="scenario-cards">
+            <div class="scenario-card">
+              <h4 class="scenario-card__title">Single implant + crown</h4>
+              <p class="scenario-card__range">$X–$Y</p>
+              <p class="scenario-card__description">Replace one missing tooth.</p>
+            </div>
+            <div class="scenario-card">
+              <h4 class="scenario-card__title">2 implants (small bridge)</h4>
+              <p class="scenario-card__range">$X–$Y</p>
+              <p class="scenario-card__description">Replace multiple teeth with fewer implants.</p>
+            </div>
+            <div class="scenario-card">
+              <h4 class="scenario-card__title">Complex (graft + implant)</h4>
+              <p class="scenario-card__range">$X–$Y</p>
+              <p class="scenario-card__description">When bone support needs rebuilding.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Other Treatments -->
+  <section class="section section--alt">
+    <div class="container">
+      <h2 class="section__title">Other treatments</h2>
       <div class="pricing-table">
-        <div class="pricing-item">
-          <span class="pricing-item__name">Teeth Whitening</span>
-          <span class="pricing-item__price">$300 to $600</span>
-        </div>
-        <div class="pricing-item">
-          <span class="pricing-item__name">Veneers (per tooth)</span>
-          <span class="pricing-item__price">$800 to $1,500</span>
-        </div>
-        <div class="pricing-item">
-          <span class="pricing-item__name">Dental Implants (per tooth)</span>
-          <span class="pricing-item__price">$3,000 to $5,000</span>
-        </div>
         <div class="pricing-item">
           <span class="pricing-item__name">Invisalign (full treatment)</span>
           <span class="pricing-item__price">$4,000 to $7,000</span>

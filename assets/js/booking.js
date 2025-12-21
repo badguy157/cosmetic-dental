@@ -41,7 +41,8 @@
     var trigger = e.target.closest('[data-open-booking]');
     if (trigger) {
       e.preventDefault();
-      openModal();
+      var treatmentValue = trigger.getAttribute('data-treatment');
+      openModal(treatmentValue);
     }
   });
 
@@ -306,17 +307,48 @@
     state.notes = '';
   }
 
-  function openModal() {
+  function openModal(prefillTreatment) {
     modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
     
     // Always start at Step 1 when opening modal
     resetModal();
     
+    // Prefill treatment if provided
+    if (prefillTreatment && inputs.treatment) {
+      var treatmentOption = findTreatmentOption(prefillTreatment);
+      if (treatmentOption) {
+        inputs.treatment.value = treatmentOption;
+      }
+    }
+    
     // Focus first input
     setTimeout(function() {
       if (inputs.name) inputs.name.focus();
     }, 100);
+  }
+
+  // Map treatment names to select option values
+  function findTreatmentOption(treatmentName) {
+    if (!treatmentName) return null;
+    
+    var normalizedName = treatmentName.toLowerCase().trim();
+    
+    // Direct mappings
+    var mappings = {
+      'veneers': 'veneers',
+      'teeth whitening': 'whitening',
+      'whitening': 'whitening',
+      'dental implants': 'implants',
+      'implants': 'implants',
+      'invisalign': 'invisalign',
+      'tooth bonding': 'bonding',
+      'bonding': 'bonding',
+      'smile makeover': 'makeover',
+      'makeover': 'makeover'
+    };
+    
+    return mappings[normalizedName] || null;
   }
 
   function closeModal() {
