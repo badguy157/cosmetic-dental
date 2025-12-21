@@ -1,0 +1,143 @@
+  <!-- Booking Modal -->
+  <div id="bookingModal" class="kt-modal" aria-hidden="true">
+    <div class="kt-modal__backdrop" data-close-modal></div>
+    <div class="kt-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="bookingTitle">
+      <button class="kt-modal__close" type="button" aria-label="Close" data-close-modal>×</button>
+
+      <div class="kt-modal__content" data-state="form">
+        <h2 id="bookingTitle">Request a Consultation</h2>
+        <p>Tell us what you're interested in. We'll confirm by text or email.</p>
+
+        <form id="bookingForm">
+          <div class="form-group">
+            <label for="booking-name">Full name *</label>
+            <input type="text" id="booking-name" name="name" required placeholder="John Smith">
+          </div>
+
+          <div class="form-group">
+            <label for="booking-phone">Phone number *</label>
+            <input type="tel" id="booking-phone" name="phone" required placeholder="(555) 000-0000">
+          </div>
+
+          <div class="form-group">
+            <label for="booking-email">Email (optional)</label>
+            <input type="email" id="booking-email" name="email" placeholder="john@example.com">
+          </div>
+
+          <div class="form-group">
+            <label for="booking-treatment">Treatment interest *</label>
+            <select id="booking-treatment" name="treatment" required>
+              <option value="">Please choose...</option>
+              <option value="whitening">Teeth Whitening</option>
+              <option value="veneers">Veneers</option>
+              <option value="implants">Dental Implants</option>
+              <option value="invisalign">Invisalign</option>
+              <option value="makeover">Smile Makeover</option>
+              <option value="bonding">Tooth Bonding</option>
+              <option value="consultation">General Consultation</option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="booking-time">Preferred time *</label>
+            <select id="booking-time" name="preferred-time" required>
+              <option value="">Please choose...</option>
+              <option value="morning">Morning (8am - 12pm)</option>
+              <option value="afternoon">Afternoon (12pm - 5pm)</option>
+              <option value="evening">Evening (5pm - 6pm)</option>
+              <option value="any">Any time works</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="booking-notes">Additional notes (optional)</label>
+            <textarea id="booking-notes" name="notes" placeholder="Tell us anything else we should know..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--large">Request consultation</button>
+        </form>
+      </div>
+
+      <div class="kt-modal__content" data-state="success" hidden>
+        <h2>Request received</h2>
+        <p>Next steps: we'll reach out within 1 business day to confirm your consultation time.</p>
+        <button type="button" class="btn btn--primary btn--large" data-close-modal>Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Booking Modal Script -->
+  <script>
+    (function() {
+      var modal = document.getElementById('bookingModal');
+      var form = document.getElementById('bookingForm');
+      var formContent = modal.querySelector('[data-state="form"]');
+      var successContent = modal.querySelector('[data-state="success"]');
+
+      // Open modal when any element with data-open-booking is clicked
+      document.addEventListener('click', function(e) {
+        if (e.target.closest('[data-open-booking]')) {
+          e.preventDefault();
+          openModal();
+        }
+      });
+
+      // Close modal
+      document.addEventListener('click', function(e) {
+        if (e.target.closest('[data-close-modal]')) {
+          closeModal();
+        }
+      });
+
+      // Close on escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') {
+          closeModal();
+        }
+      });
+
+      // Handle form submission
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          // Here you would normally send the form data to a server
+          // For now, we'll just show the success message
+          
+          // Hide form, show success
+          formContent.hidden = true;
+          successContent.hidden = false;
+          
+          // Reset form for next use
+          form.reset();
+        });
+      }
+
+      function openModal() {
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        
+        // Reset to form view
+        formContent.hidden = false;
+        successContent.hidden = true;
+        
+        // Focus first input
+        setTimeout(function() {
+          var firstInput = form.querySelector('input');
+          if (firstInput) firstInput.focus();
+        }, 100);
+      }
+
+      function closeModal() {
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        
+        // Reset to form view after animation
+        setTimeout(function() {
+          formContent.hidden = false;
+          successContent.hidden = true;
+        }, 300);
+      }
+    })();
+  </script>
