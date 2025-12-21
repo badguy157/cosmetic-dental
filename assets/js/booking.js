@@ -8,8 +8,8 @@
   var formContent = modal ? modal.querySelector('[data-state="form"]') : null;
   var successContent = modal ? modal.querySelector('[data-state="success"]') : null;
 
-  // Exit early if modal doesn't exist on this page
-  if (!modal || !form) {
+  // Exit early if modal or required elements don't exist on this page
+  if (!modal || !form || !formContent || !successContent) {
     return;
   }
 
@@ -22,7 +22,7 @@
     }
   });
 
-  // Close modal
+  // Close modal when clicking close button or backdrop
   document.addEventListener('click', function(e) {
     if (e.target.closest('[data-close-modal]')) {
       closeModal();
