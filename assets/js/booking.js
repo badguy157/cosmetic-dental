@@ -231,9 +231,9 @@
     state.phone = inputs.phone.value.trim();
     state.email = inputs.email.value.trim();
     state.treatment = inputs.treatment.value;
-    state.treatmentText = inputs.treatment.options[inputs.treatment.selectedIndex].text;
+    state.treatmentText = inputs.treatment.selectedIndex >= 0 ? inputs.treatment.options[inputs.treatment.selectedIndex].text : '';
     state.time = inputs.time.value;
-    state.timeText = inputs.time.options[inputs.time.selectedIndex].text;
+    state.timeText = inputs.time.selectedIndex >= 0 ? inputs.time.options[inputs.time.selectedIndex].text : '';
     state.notes = inputs.notes.value.trim();
   }
 
@@ -295,17 +295,15 @@
     clearAllErrors();
     // Reset form inputs
     form.reset();
-    // Clear state
-    state = {
-      name: '',
-      phone: '',
-      email: '',
-      treatment: '',
-      treatmentText: '',
-      time: '',
-      timeText: '',
-      notes: ''
-    };
+    // Clear state properties
+    state.name = '';
+    state.phone = '';
+    state.email = '';
+    state.treatment = '';
+    state.treatmentText = '';
+    state.time = '';
+    state.timeText = '';
+    state.notes = '';
   }
 
   function openModal() {
