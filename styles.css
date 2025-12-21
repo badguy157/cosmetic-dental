@@ -1496,6 +1496,14 @@ p {
   margin: 0 auto;
 }
 
+.dentist-strip__stat > div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .dentist-strip__stat-number {
   font-size: 1.875rem;
   font-weight: 700;
