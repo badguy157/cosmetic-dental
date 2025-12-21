@@ -525,6 +525,7 @@ p {
   border: 1px solid var(--color-border);
   transition: all var(--transition);
   overflow: hidden;
+  position: relative;
 }
 
 .ba-card:hover {
@@ -608,6 +609,74 @@ p {
   font-size: 0.875rem;
   color: var(--color-text);
   margin: 0;
+  margin-bottom: 1rem;
+}
+
+/* Corner badge for ba-card */
+.ba-card__corner-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+}
+
+/* Case details accordion */
+.ba-card__details {
+  margin-top: 1rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 1rem;
+}
+
+.ba-card__details-toggle {
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  list-style: none;
+  user-select: none;
+}
+
+.ba-card__details-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.ba-card__details-toggle::before {
+  content: '▶';
+  font-size: 0.625rem;
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+
+.ba-card__details[open] .ba-card__details-toggle::before {
+  transform: rotate(90deg);
+}
+
+.ba-card__details-toggle:hover {
+  color: var(--color-primary);
+}
+
+.ba-card__details-content {
+  padding: 1rem 0 0.5rem;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+.ba-card__details-content p {
+  margin: 0 0 0.5rem 0;
+  color: var(--color-text-light);
+}
+
+.ba-card__details-content p:last-child {
+  margin-bottom: 0;
+}
+
+.ba-card__details-content strong {
+  color: var(--color-text);
+  font-weight: 600;
 }
 
 /* FAQ - Premium card styling */
